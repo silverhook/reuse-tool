@@ -53,10 +53,12 @@ This output is convenient for use in larger scripts.
 
 .. code-block:: console
 
-  $ git log --reverse --date="format:%Y" --format="format:%cd" | head -n 1
+  $ git log --follow --format=%as $file | tail -n1 | cut -c-4
   2017
 
 .. SPDX-SnippetEnd
+
+You can also fine-tune how much of the file needs to be the same for your use case to be considered the same file, only renamed, use the ``--find-renames`` option in the ``git`` command.
 
 *******
 Authors
